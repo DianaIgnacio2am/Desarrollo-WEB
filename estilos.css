@@ -82,4 +82,65 @@ button:hover {
   background-color: #002c5c;
 }
 
+footer {
+  background-color: white;
+  border-top: 1px solid #ccc;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.footer-top h2 {
+  font-family: 'Times New Roman', serif;
+  color: #2a4d8d;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #004080;
+  font-weight: bold;
+}
+
+.social-icons {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espacio entre íconos */
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: #555;
+}
+
+.footer-bottom p {
+  margin: 0.5rem 0;
+}
+
 
