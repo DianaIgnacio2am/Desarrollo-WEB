@@ -5,6 +5,7 @@ body {
   background-color: #fafafa;
   color: #333;
 }
+
 header {
   background-color: white;
   color: #004080;
@@ -12,23 +13,15 @@ header {
   text-align: center;
   border-bottom: 1px solid #ccc;
 }
-        img {
-            width: 100%;  /* Hace que la imagen ocupe todo el ancho disponible */
-            max-width: 1000px;  /* Limita el tamaño máximo de la imagen */
-            height: auto;  /* Mantiene la relación de aspecto de la imagen */
-            display: block;
-            margin: 40px auto;  /* Centra la imagen y agrega espacio en la parte superior e inferior */
-            border-radius: 10px; 
-        }
+
 header h1 {
   font-family: 'Times New Roman', serif;
-  color: #2a4d8d; /* azul más claro como el de la imagen */
+  color: #2a4d8d;
   font-size: 2.5rem;
   margin: 0;
   font-weight: bold;
   letter-spacing: 1px;
 }
-
 
 nav ul {
   list-style: none;
@@ -40,12 +33,10 @@ nav ul {
 }
 
 nav a {
-  color: black; 
+  color: black;
   text-decoration: none;
   font-weight: bold;
 }
-
-
 
 main {
   padding: 2rem;
@@ -55,7 +46,16 @@ main {
 }
 
 h2 {
-color: black; 
+  color: black;
+}
+
+img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 40px auto;
+  border-radius: 10px;
 }
 
 form {
@@ -66,8 +66,6 @@ label {
   display: block;
   margin-bottom: 0.5rem;
 }
-
-
 
 button {
   background-color: #004080;
@@ -118,7 +116,7 @@ footer {
   margin: 1rem 0;
   display: flex;
   justify-content: center;
-  gap: 10px; /* Espacio entre íconos */
+  gap: 10px;
 }
 
 .social-icons img {
@@ -126,7 +124,6 @@ footer {
   height: 24px;
   vertical-align: middle;
 }
-
 
 .footer-bottom {
   margin-top: 1rem;
@@ -142,5 +139,3 @@ footer {
 .footer-bottom p {
   margin: 0.5rem 0;
 }
-
-
