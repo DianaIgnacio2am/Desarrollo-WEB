@@ -1,11 +1,14 @@
+/* Estilos base para todo el body */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background-color: #fafafa;
   color: #333;
+  max-width: 1200px; /* ancho máximo centrado */
 }
 
+/* Encabezado principal */
 header {
   background-color: white;
   color: #004080;
@@ -23,6 +26,7 @@ header h1 {
   letter-spacing: 1px;
 }
 
+/* Navegación principal */
 nav ul {
   list-style: none;
   padding: 0;
@@ -32,12 +36,21 @@ nav ul {
   gap: 1.5rem;
 }
 
+nav ul li {
+  /* Opcional, para manejar espaciado o estilos en cada li */
+}
+
 nav a {
   color: black;
   text-decoration: none;
   font-weight: bold;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Contenido principal */
 main {
   padding: 2rem;
   max-width: 800px;
@@ -45,11 +58,18 @@ main {
   background-color: white;
 }
 
-h2 {
+/* Artículo dentro del main */
+main article h2 {
   color: black;
+  margin-top: 2rem;
 }
 
-img {
+main article p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+main article img {
   width: 100%;
   max-width: 1000px;
   height: auto;
@@ -58,6 +78,7 @@ img {
   border-radius: 10px;
 }
 
+/* Formulario - si lo usas */
 form {
   margin-top: 1rem;
 }
@@ -80,6 +101,7 @@ button:hover {
   background-color: #002c5c;
 }
 
+/* Pie de página */
 footer {
   background-color: white;
   border-top: 1px solid #ccc;
@@ -106,10 +128,18 @@ footer {
   gap: 1rem;
 }
 
+.footer-links li {
+  /* Opcional */
+}
+
 .footer-links a {
   text-decoration: none;
   color: #004080;
   font-weight: bold;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
 }
 
 .social-icons {
@@ -119,7 +149,7 @@ footer {
   gap: 10px;
 }
 
-.social-icons img {
+.social-icons a img {
   width: 24px;
   height: 24px;
   vertical-align: middle;
@@ -136,6 +166,58 @@ footer {
   color: #555;
 }
 
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
 .footer-bottom p {
   margin: 0.5rem 0;
+}
+
+/* Media Queries */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .social-icons {
+    gap: 5px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  main {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+/* Pantallas grandes (PC grandes o monitores externos) */
+@media (min-width: 1201px) {
+  main {
+    max-width: 1000px;
+    padding: 3rem;
+  }
+
+  nav ul {
+    gap: 3rem;
+  }
+
+  .footer-links {
+    gap: 2rem;
+  }
 }
