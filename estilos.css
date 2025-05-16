@@ -1,11 +1,9 @@
-/* Diseño base: pensado para escritorio (PC) */
 body {
   font-family: Arial, sans-serif;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   background-color: #fafafa;
   color: #333;
-  max-width: 1200px; /* limitar ancho máximo para no estirar demasiado */
 }
 
 header {
@@ -32,19 +30,12 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap; /* para que en pantallas medianas se pueda ajustar */
-}
-
-nav ul li {
-  /* para mantener buen comportamiento en móviles */
 }
 
 nav a {
   color: black;
   text-decoration: none;
   font-weight: bold;
-  display: inline-block;
-  white-space: nowrap; /* evitar saltos de línea en los textos */
 }
 
 main {
@@ -119,7 +110,6 @@ footer {
   text-decoration: none;
   color: #004080;
   font-weight: bold;
-  white-space: nowrap;
 }
 
 .social-icons {
@@ -155,24 +145,44 @@ footer {
   nav ul {
     flex-direction: column;
     gap: 0.5rem;
-    padding: 0;
-    margin: 0 auto 1rem auto;
+  }
+
+  main {
+    padding: 1rem;
     max-width: 100%;
   }
 
-  nav ul li {
-    text-align: center;
-    width: 100%;
+  .footer-links {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  nav a {
-    display: block;
-    padding: 0.5rem 1rem;
-    font-size: 1.1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .social-icons {
+    gap: 5px;
   }
+}
+
+/* Diseño base: pensado para escritorio (PC) */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  color: #333;
+  max-width: 1200px; /* limitar ancho máximo para no estirar demasiado */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+nav ul {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.5rem;
+  padding: 0 1rem; /* para que no quede pegado a los bordes */
+}
 
   main {
     padding: 1rem;
