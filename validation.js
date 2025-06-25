@@ -1,5 +1,3 @@
-
-// Espera a que cargue todo el DOM
 window.onload = function () {
   const form = document.getElementById("subscriptionForm");
   const title = document.getElementById("formTitle");
@@ -48,7 +46,7 @@ window.onload = function () {
     dni: (v) => /^\d{7,8}$/.test(v) || "Debe tener 7 u 8 dígitos.",
   };
 
-  // Asignar eventos
+  // Asignar eventos de validación
   for (const key in inputs) {
     const input = inputs[key];
     const errorDiv = document.getElementById("error-" + key);
@@ -85,15 +83,21 @@ window.onload = function () {
     modal.style.display = "flex";
     modal.style.alignItems = "center";
     modal.style.justifyContent = "center";
-    modal.innerHTML = '<div style="background:white;padding:20px;border-radius:8px;max-width:500px;text-align:center"><p>' + msg + '</p><button onclick="document.getElementById(\'modal\').remove()">Cerrar</button></div>';
+    modal.innerHTML =
+      '<div style="background:white;padding:20px;border-radius:8px;max-width:500px;text-align:center"><pre style="text-align:left">' +
+      msg +
+      '</pre><button onclick="document.getElementById(\'modal\').remove()">Cerrar</button></div>';
     document.body.appendChild(modal);
   };
 
+  // Envío de formulario
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     // Forzar blur para validar todos
-    Object.values(inputs).forEach((input) => input.dispatchEvent(new Event("blur")));
+    Object.values(inputs).forEach((input) =>
+      input.dispatchEvent(new Event("blur"))
+    );
 
     if (Object.keys(errors).length > 0) {
       createModal("Errores en el formulario: " + Object.values(errors).join(" | "));
@@ -102,22 +106,28 @@ window.onload = function () {
 
     const formData = {};
     const queryParams = [];
+
     for (const key in inputs) {
       formData[key] = inputs[key].value.trim();
       queryParams.push(key + "=" + encodeURIComponent(inputs[key].value.trim()));
     }
 
-   const url = `http://curso-dev-2021.herokuapp.com/newsletter?${params.toString()}`;
-
-
+    const url = `https://httpbin.org/get?${queryParams.join("&")}`;
 
     fetch(url)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         localStorage.setItem("formData", JSON.stringify(formData));
-        createModal("Suscripción exitosa. Datos recibidos: " + JSON.stringify(data));
+        const datos = data.args;
+        let mensaje = "";
+        for (const key in datos) {
+          if (key !== "password" && key !== "repeatPassword") {
+            mensaje += `${key}: ${datos[key]}\n`;
+          }
+        }
+        createModal(mensaje);
       })
-      .catch(error => {
+      .catch((error) => {
         createModal("Error al enviar datos: " + error.message);
       });
   });
