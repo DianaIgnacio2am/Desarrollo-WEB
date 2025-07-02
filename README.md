@@ -3,5 +3,3 @@ https://www.ellitoral.com/deportes/psg-gano-arsenal-jugara-final-champions-inter
 
 mi link
 https://dianaignacio2am.github.io/Desarrollo-WEB/
-
-ENTREGA SEMANA 9
